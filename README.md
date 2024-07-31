@@ -24,22 +24,22 @@ DB_DATABASE="MOTOR_INSURANCE_WEBSITE"
 TOKEN_SECRET="f8947d88022172aee1b250abf64df78a1d65aac6c4f82ced2e45cccd6c327041"
 ```
 
-#### Solution
+## Solution
 Kindly refer to the requirements [here](/notes/MS%20Assessment.pdf).
 
 _Please get a header token from `/token` api with your prefered role to access the product endpoints._
 
-##### Database Setup
+#### Database Setup
 1. Configure typeorm & establish a connnection to database. Environment variales is used here to control over different environments.
 
 2. Setup database migration scripts, including migration generate & migration run command. Migration is chosen over auto schema synchronization to prevent data lost in production environment. 
 
-##### Project Setup 
+#### Project Setup 
 1. Standardize communication using  `ResponseMappingInterceptor` for mapping responses to a common DTO.
 
 2. Define a generic and reusable API response, `ApiOkCommonResponse` for Swagger use.
 
-##### Authentication & Authorization
+#### Authentication & Authorization
 JWT is used here for authentication & authorization purpose.
 
 `AuthMiddleware`
@@ -54,7 +54,7 @@ This is a reusable decorator which serves the purpose of assigning required role
 `RoleGuard`
 This is a guard which secures an access to a route based on role. It gets required role from the handler metadata and performs a role checking.
 
-##### Product Module
+#### Product Module
 `Product` Entity
 Create a product entity with common columns (eg. created date, updated date, etc) and appropriate column options, including column type, length, and precision & scale for price.
 
