@@ -6,6 +6,6 @@ export class AddProductRequestDto extends UpdateProductRequestDto {
     @ApiProperty()
     @IsNotEmpty()
     @IsNumberString()
-    @Length(4)
+    @Length(4, 4, { message: 'Product Code should be 4 digit only' })
     productCode: string;
 }

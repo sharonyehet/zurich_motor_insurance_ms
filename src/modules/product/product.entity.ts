@@ -12,7 +12,7 @@ export class Product {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({ unique: true, type: 'varchar', length: 4 })
+    @Column({ type: 'varchar', length: 4 })
     productCode: string;
 
     @Column({ nullable: true, type: 'varchar', length: 128 })

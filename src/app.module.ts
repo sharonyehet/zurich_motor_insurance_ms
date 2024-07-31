@@ -1,12 +1,14 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { APP_INTERCEPTOR } from '@nestjs/core';
+import { JwtModule } from '@nestjs/jwt';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import 'dotenv/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ResponseMappingInterceptor } from './common/interceptors/response-mapping.interceptor';
 import { DATA_SOURCE_OPTIONS } from './configs/typeorm.config';
+import { AuthMiddleware } from './jwt/authentication.middleware';
 import { ProductModule } from './modules/product/product.module';
 
 @Module({
@@ -14,6 +16,9 @@ import { ProductModule } from './modules/product/product.module';
         ConfigModule.forRoot(),
         TypeOrmModule.forRoot(DATA_SOURCE_OPTIONS),
         ProductModule,
+        JwtModule.register({
+            global: true,
+        }),
     ],
     controllers: [AppController],
     providers: [
@@ -24,4 +29,8 @@ import { ProductModule } from './modules/product/product.module';
         },
     ],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+    configure(consumer: MiddlewareConsumer) {
+        consumer.apply(AuthMiddleware).exclude('/token').forRoutes('*');
+    }
+}
