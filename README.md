@@ -18,8 +18,8 @@ e.g. http://localhost:3000/swagger
 ```typescript
 DB_HOST="localhost"
 DB_PORT="5432"
-DB_USER="postgres"
-DB_PASSWORD="sharon001104"
+DB_USER="{your-username}"
+DB_PASSWORD="{your-password}"
 DB_DATABASE="MOTOR_INSURANCE_WEBSITE"
 TOKEN_SECRET="f8947d88022172aee1b250abf64df78a1d65aac6c4f82ced2e45cccd6c327041"
 ```
