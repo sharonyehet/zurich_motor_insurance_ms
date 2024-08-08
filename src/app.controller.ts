@@ -4,7 +4,7 @@ import { JwtService } from '@nestjs/jwt';
 import { ApiQuery } from '@nestjs/swagger';
 import { AppService } from './app.service';
 import { Role } from './common/constants/constants';
-import { JwtPayload } from './jwt/jwt.type';
+import { JwtPayload } from './common/interfaces/jwt.type';
 
 @Controller()
 export class AppController {

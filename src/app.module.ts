@@ -7,8 +7,8 @@ import 'dotenv/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ResponseMappingInterceptor } from './common/interceptors/response-mapping.interceptor';
+import { AuthMiddleware } from './common/middlewares/authentication.middleware';
 import { DATA_SOURCE_OPTIONS } from './configs/typeorm.config';
-import { AuthMiddleware } from './jwt/authentication.middleware';
 import { ProductModule } from './modules/product/product.module';
 
 @Module({

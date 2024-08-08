@@ -14,14 +14,14 @@ import { ApiOkCommonResponse } from 'src/common/decorators/api-ok-response.decor
 import { Roles } from 'src/common/decorators/role.decorator';
 import { CommonSuccessResponseDto } from 'src/common/dtos/common-response.dto';
 import { RolesGuard } from 'src/common/guards/role.guard';
-import { AddProductRequestDto } from './dtos/add-product.dto';
-import { ProductRequestQueryDto } from './dtos/common.dto';
+import { AddProductRequestDto } from '../product-dtos/add-product.dto';
+import { ProductRequestQueryDto } from '../product-dtos/common.dto';
 import {
     GetProductRequestDto,
     GetProductResponseDto,
-} from './dtos/get-product.dto';
-import { UpdateProductRequestDto } from './dtos/update-product.dto';
-import { ProductService } from './product.service';
+} from '../product-dtos/get-product.dto';
+import { UpdateProductRequestDto } from '../product-dtos/update-product.dto';
+import { ProductService } from '../product-services/product.service';
 
 @ApiBearerAuth()
 @ApiTags('Product')

@@ -5,8 +5,8 @@ import {
     Repository,
     UpdateResult,
 } from 'typeorm';
-import { UpdateProductRequestDto } from './dtos/update-product.dto';
-import { Product } from './product.entity';
+import { UpdateProductRequestDto } from '../product-dtos/update-product.dto';
+import { Product } from '../product-entities/product.entity';
 
 @Injectable()
 export class ProductRepository extends Repository<Product> {

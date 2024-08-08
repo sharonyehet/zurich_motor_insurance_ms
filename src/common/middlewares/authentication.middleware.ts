@@ -19,6 +19,7 @@ export class AuthMiddleware implements NestMiddleware {
                 error: 'Unauthorized',
                 message: 'No token provided',
             });
+            return;
         }
 
         token = token.split(' ')[1];

@@ -5,13 +5,14 @@
 1. Clone the project and npm install required packages.
 2. Setup your localhost database.
 3. Configure .env file in root folder. Please refer to below.
-4. Generate migration file.
+4. Generate migration file. 
    `npm run migration:generate:dev`
+   If there is no changes in database schema, no migration files would be generated. You may proceed to run the existing migration files with command in Step 5.
 5. Run data migration to sync your local database schema.
    `npm run migration:run:dev`
 6. Start the application with `npm run start`.
 7. Access swagger from `{endPoint}/swagger`.
-e.g. http://localhost:3000/swagger
+e.g. http://localhost:3200/swagger
 
 #### Environment variables (local)
 
