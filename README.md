@@ -26,7 +26,6 @@ TOKEN_SECRET="f8947d88022172aee1b250abf64df78a1d65aac6c4f82ced2e45cccd6c327041"
 ```
 
 ## Solution
-Kindly refer to the requirements [here](/notes/MS%20Assessment.pdf).
 
 _Please get a header token from `/token` api with your preferred role to access the product endpoints._
 
